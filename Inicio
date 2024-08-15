@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzas Patito</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: orange;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .menu-icon img {
+            width: 24px;
+            height: 24px;
+        }
+        nav {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 80px;
+            z-index: 999;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            position: relative;
+            margin: 10px 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: orange;
+            position: relative;
+            z-index: 1;
+        }
+        nav ul li a img {
+            width: 24px;
+            height: 24px;
+        }
+        nav ul li .tooltip {
+            position: absolute;
+            top: 50%;
+            left: 60px;
+            transform: translateY(-50%);
+            background-color: orange;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, left 0.3s;
+            z-index: 0;
+        }
+        nav ul li:hover .tooltip {
+            opacity: 1;
+            left: 70px;
+        }
+        .menu-section, .promotions-section, .offers-section {
+            padding: 50px;
+            text-align: center;
+        }
+        .menu-section {
+            background-color: white;
+        }
+        .promotions-section {
+            background-color: orange;
+            color: white;
+        }
+        .offers-section {
+            background-color: red;
+            color: white;
+        }
+        .user-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .user-menu img {
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown a img {
+            margin-right: 8px;
+        }
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+        .user-menu:hover .dropdown {
+            display: block;
+        }
+        .show-menu nav {
+            display: block;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pizzas Patito</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="C:\Users\ver30\OneDrive\Documentos\OTROS\COSAS UNI\VANESA\FRAMES\menu.png" alt="Menú">
+        </div>
+        <div class="user-menu">
+            <img src="C:\Users\ver30\OneDrive\Documentos\OTROS\COSAS UNI\VANESA\FRAMES\iconnn.png" alt="User Menu" width="24" height="24">
+            <div class="dropdown">
+                <a href="rgs.html"><img src="https://colegiocarlrogers.edu.mx/wp-content/uploads/2023/10/registro.png" alt="Registro" width="24" height="24">Registrarse</a>
+                <a href="htn.html"><img src="https://ps.w.org/login-customizer/assets/icon-256x256.png?rev=2455454" alt="Iniciar Sesión" width="24" height="24">Iniciar Sesión</a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="cli.html"><img src="C:\Users\ver30\OneDrive\Documentos\OTROS\COSAS UNI\VANESA\FRAMES\menu.png" alt="Inicio"></a>
+                <div class="tooltip">Inicio</div>
+            </li>
+            <li>
+                <a href="index.html"><img src="C:\Users\ver30\OneDrive\Documentos\OTROS\COSAS UNI\VANESA\FRAMES\menu.png" alt="Menú"></a>
+                <div class="tooltip">Menú</div>
+            </li>
+            <li>
+                <a href="prom.html"><img src="C:\Users\ver30\OneDrive\Documentos\OTROS\COSAS UNI\VANESA\FRAMES\pizza.png" alt="Promociones"></a>
+                <div class="tooltip">Promociones</div>
+            </li>
+            <li>
+                <a href="ofer.html"><img src="C:\Users\ver30\OneDrive\Documentos\OTROS\COSAS UNI\VANESA\FRAMES\pizza.png" alt="Ofertas"></a>
+                <div class="tooltip">Ofertas</div>
+            </li>
+        </ul>
+    </nav>
+    <div id="menu" class="menu-section">
+        <h2>Menú</h2>
+        <!-- Contenido del menú -->
+    </div>
+    <div id="promotions" class="promotions-section">
+        <h2>Promociones</h2>
+        <!-- Contenido de promociones -->
+    </div>
+    <div id="offers" class="offers-section">
+        <h2>Ofertas</h2>
+        <!-- Contenido de ofertas -->
+    </div>
+    <footer>
+        <p>&copy; 2024 Pizzas Patito. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle('show-menu');
+        }
+    </script>
+</body>
+</html>
